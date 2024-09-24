@@ -1,0 +1,30 @@
+You will need to insitall 
+Spell Checker
+TextBlob
+PyDictionary 
+for this to work
+
+Python
+from textblob import TextBlob
+
+def spell_check(word):
+    # Create a TextBlob object
+    blob = TextBlob(word)
+    
+    # Get the corrected word
+    corrected_word = blob.correct()
+    
+    # Print the original and corrected word
+    if word == str(corrected_word):
+        print(f"'{word}' is spelled correctly!")
+    else:
+        print(f"'{word}' is incorrect. Did you mean '{corrected_word}'?")
+        
+# Example usage
+word = input("Enter a word to check its spelling: ")
+spell_check(word)
+
+css
+Enter a word to check its spelling: teh
+'teh' is incorrect. Did you mean 'the'?
+
